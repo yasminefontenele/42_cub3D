@@ -60,6 +60,14 @@ void	adjust_player_position(t_game *game, char direction)
 		game->player.pos_y -= COLLISION;
 }
 
+int	initialize_game_data(t_game *game)
+{
+	game->data.mlx = mlx_init();
+	if (!game->data.mlx)
+		return (0);
+	return (1);
+}
+
 void	init_player(t_game *game, int x, int y, char direction)
 {
 	game->player.pos_x = x + 0.5;
@@ -80,28 +88,3 @@ void	init_player(t_game *game, int x, int y, char direction)
 	game->player.mov_sp = MOVE_SPEED;
 	game->player.rot_sp = ROTATE_SPEED;
 }
-/*
-void	init_player(t_game *game, int x, int y, char direction)
-{
-	game->player.pos_x = x + 0.5;
-	game->player.pos_y = y + 0.5;
-	while (game->map.layout[(int)(game->player.pos_x - COLLISION)]
-		[(int)(game->player.pos_y)] == '1' ||
-		game->map.layout[(int)(game->player.pos_x + COLLISION)] \
-			[(int)(game->player.pos_y)] == '1'
-			|| game->map.layout[(int)(game->player.pos_x)] \
-			[(int)(game->player.pos_y - COLLISION)] == '1'
-			|| game->map.layout[(int)(game->player.pos_x)] \
-			[(int)(game->player.pos_y + COLLISION)] == '1')
-	{
-		game->player.pos_x += COLLISION * (direction == 'E' ? -1 : 1);
-		game->player.pos_y += COLLISION * (direction == 'N' ? 1 : -1);
-	}
-	if (direction == 'N' || direction == 'S')
-		player_ns_dir(game, direction);
-	else if (direction == 'E' || direction == 'W')
-		player_ew_dir(game, direction);
-	game->player.mov_sp = MOVE_SPEED;
-	game->player.rot_sp = ROTATE_SPEED;
-}
-*/

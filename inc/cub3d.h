@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yfontene <yfontene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:21:36 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/03 09:58:52 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/03 12:22:31 by yfontene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@
 # define COLOR_FORMAT "Color format incorrect."
 # define WRONG_TEX "Wrong texture path."
 
+#define CYAN "\033[0;36m"
+#define MAGENTA "\033[0;35m"
+#define RESET "\033[0m"
+
 # define TILE_SIZE	64
 # define KEY_W		13
 # define KEY_A		0
@@ -57,21 +61,21 @@
 
 typedef struct s_ray
 {
-	double		direc_x;//directionX;
+	double		direc_x;
 	double		wallx;
-	double		direc_y;//directionY;
-	int			grid_x;//gridX;
-	int			grid_y;//gridY;
-	double		dist_to_sidex;//distanceToSideX;
-	double		dist_to_sidey;//distanceToSideY;
-	double		dist_deltax;//distanceDeltaX;
-	double		dist_deltay;//distanceDeltaY;
-	int			step_directx;//stepDirectionX;
-	int			step_directy;//stepDirectionY;
-	int			wall_side;//wallSide;
-	double		wall_dist;//wallDistance;
-	int			start_draw;//startDraw;
-	int			end_draw;//endDraw;
+	double		direc_y;
+	int			grid_x;
+	int			grid_y;
+	double		dist_to_sidex;
+	double		dist_to_sidey;
+	double		dist_deltax;
+	double		dist_deltay;
+	int			step_directx;
+	int			step_directy;
+	int			wall_side;
+	double		wall_dist;
+	int			start_draw;
+	int			end_draw;
 }				t_ray;
 
 typedef struct s_color
@@ -177,5 +181,16 @@ void	draw_floor_and_ceiling(t_game *game, int x, t_ray *ray);
 void	destroy_image(void *mlx, void **img);
 void	free_map(t_map *map);
 int		close_window(t_game *game);
+void	calculate_delta_distance(t_ray *ray);
+void	calculate_step_and_side_dist(t_game *game, t_ray *ray);
+void	calculate_draw_positions(t_ray *ray);
+int		initialize_game_data(t_game *game);
+int		my_isspace(int c);
+char	*trim_whitespace(char *str);
+void	allocate_map_row(char **row, int width);
+void	allocate_empty_row(char *map_row, int width);
+void	allocate_map_layout(t_map *map);
+void	free_textures(t_game *game);
+void	free_img(t_game *game);
 
 #endif

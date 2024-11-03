@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yfontene <yfontene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:22:20 by yasmine           #+#    #+#             */
-/*   Updated: 2024/11/03 09:46:35 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/03 12:06:20 by yfontene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ int	is_valid_map_char(char c)
 		|| c == 'W' || c == ' ');
 }
 
+int	my_isspace(int c)
+{
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r');
+}
+
 int	check_row_border(char **map_tab, int row, int start)
 {
 	if (!map_tab || !map_tab[row] || !map_tab[row][start])
@@ -58,4 +64,3 @@ int	check_row_border(char **map_tab, int row, int start)
 	}
 	return (1);
 }
-

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: emencova <emencova@student.42.fr>          +#+  +:+       +#+         #
+#    By: yfontene <yfontene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/23 13:15:17 by yfontene          #+#    #+#              #
-#    Updated: 2024/11/02 15:26:36 by emencova         ###   ########.fr        #
+#    Updated: 2024/11/03 11:57:12 by yfontene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,7 @@ SRCS=					main.c\
 						./src/dda.c\
 						./src/game_init.c\
 						./src/parse_map.c\
-						
-						
-						
+						./src/parse_map_aux.c\
 						
 OBJS=					$(SRCS:.c=.o)
 
