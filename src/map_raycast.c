@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_raycast.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
+/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 20:14:46 by yfontene          #+#    #+#             */
-/*   Updated: 2024/11/02 21:13:00 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/03 12:45:58 by emencova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int	perform_raycasting(t_game *game, int x, t_ray *ray)
 double	calculate_wall_x(t_game *game, t_ray *ray)
 {
 	if (ray->wall_side == 1 || ray->wall_side == 2)
-		ray->wallx = game->map.player_y + ray->wall_dist * ray->direc_y;
+		ray->wallx = game->player.pos_y + ray->wall_dist * ray->direc_y;
 	else
-		ray->wallx = game->map.player_x + ray->wall_dist * ray->direc_x;
+		ray->wallx = game->player.pos_x + ray->wall_dist * ray->direc_x;
 	ray->wallx -= floor(ray->wallx);
 	return (ray->wallx);
 }
