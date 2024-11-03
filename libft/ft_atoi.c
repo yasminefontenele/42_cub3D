@@ -15,10 +15,8 @@
 
 int	process_sign_and_whitespace(const char **nptr)
 {
-	size_t	i;
 	int		sign;
 
-	i = 0;
 	sign = 1;
 	while ((**nptr <= 13 && **nptr >= 9) || (**nptr == 32))
 		(*nptr)++;
@@ -37,12 +35,10 @@ int	process_sign_and_whitespace(const char **nptr)
 int	ft_atoi(const char *nptr)
 {
 	int			res;
-	const char	*original_nptr;
 	int			sign;	
 
 	sign = process_sign_and_whitespace(&nptr);
 	res = 0;
-	original_nptr = nptr;
 	while ((*nptr >= '0' && *nptr <= '9') || *nptr == ',')
 	{
 		if (*nptr == ',')
