@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yfontene <yfontene@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:21:36 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/03 12:22:31 by yfontene         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:07:41 by emencova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@
 # define COLOR_FORMAT "Color format incorrect."
 # define WRONG_TEX "Wrong texture path."
 
-#define CYAN "\033[0;36m"
-#define MAGENTA "\033[0;35m"
-#define RESET "\033[0m"
+# define CYAN "\033[0;36m"
+# define MAGENTA "\033[0;35m"
+# define RESET "\033[0m"
 
 # define TILE_SIZE	64
 # define KEY_W		13

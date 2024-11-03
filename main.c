@@ -39,20 +39,20 @@ void	free_img(t_game *game)
 		mlx_destroy_image(game->data.mlx, game->texture.east_img);
 }
 
-void display_controls(void)
+void	display_controls(void)
 {
-    printf(CYAN " ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ \n"RESET);
-    printf(CYAN"██╔════╝██║   ██║██╔══██╗╚════██╗██╔══██╗\n"RESET);
-    printf(CYAN"██║     ██║   ██║██████╔╝ █████╔╝██║  ██║\n"RESET);
-    printf(CYAN"██║     ██║   ██║██╔══██╗ ╚═══██╗██║  ██║\n"RESET);
-    printf(CYAN"╚██████╗╚██████╔╝██████╔╝██████╔╝██████╔╝\n"RESET);
-    printf(CYAN" ╚═════╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚═════╝ \n"RESET);
-    printf(MAGENTA "\tW" RESET ": move forward\t");
-    printf(MAGENTA "\tS" RESET ": move backward\n");
-    printf(MAGENTA "\tA" RESET ": move left\t");
-    printf(MAGENTA "\tD" RESET ": move right\n");
-    printf(MAGENTA "\t<" RESET ": rotate left\t");
-    printf(MAGENTA "\t>" RESET ": rotate right\n");
+	printf(CYAN " ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ \n"RESET);
+	printf(CYAN"██╔════╝██║   ██║██╔══██╗╚════██╗██╔══██╗\n"RESET);
+	printf(CYAN"██║     ██║   ██║██████╔╝ █████╔╝██║  ██║\n"RESET);
+	printf(CYAN"██║     ██║   ██║██╔══██╗ ╚═══██╗██║  ██║\n"RESET);
+	printf(CYAN"╚██████╗╚██████╔╝██████╔╝██████╔╝██████╔╝\n"RESET);
+	printf(CYAN" ╚═════╝ ╚═════╝ ╚═════╝ ╚═════╝ ╚═════╝ \n"RESET);
+	printf(MAGENTA "\tW" RESET ": move forward\t");
+	printf(MAGENTA "\tS" RESET ": move backward\n");
+	printf(MAGENTA "\tA" RESET ": move left\t");
+	printf(MAGENTA "\tD" RESET ": move right\n");
+	printf(MAGENTA "\t<" RESET ": rotate left\t");
+	printf(MAGENTA "\t>" RESET ": rotate right\n");
 }
 
 int	main(int ac, char **av)
@@ -64,7 +64,7 @@ int	main(int ac, char **av)
 		printf("Error:\n"INVALID_AC"\n");
 		exit (1);
 	}
-	//display_controls();
+	display_controls();
 	ft_memset(&game, 0, sizeof(t_game));
 	load_map(av[1], &game);
 	if (!validate_input(&game.map, av))
