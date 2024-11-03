@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:25:41 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/02 17:11:32 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/03 10:13:47 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	fill_map_content(char **file_lines, t_map *map, int map_start)
 		j++;
 	}
 }
+
 
 void	fill_map_layout(char **file_lines, t_map *map, int map_start)
 {

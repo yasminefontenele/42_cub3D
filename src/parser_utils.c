@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:22:20 by yasmine           #+#    #+#             */
-/*   Updated: 2024/11/02 15:20:03 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:46:35 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,4 @@ int	check_row_border(char **map_tab, int row, int start)
 	}
 	return (1);
 }
+

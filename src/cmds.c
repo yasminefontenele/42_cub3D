@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cmds.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:27:45 by yfontene          #+#    #+#             */
-/*   Updated: 2024/11/02 18:00:33 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/03 09:54:42 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	free_map(t_map *map)
 	map->layout = NULL;
 }
 
-static void	destroy_image(void *mlx, void **img)
+void	destroy_image(void *mlx, void **img)
 {
 	if (*img)
 	{

@@ -64,34 +64,6 @@ void	free_textures(t_game *game)
 	free_img(game);
 }
 
-void	cleanup_game(t_game *game)
-{
-	void	*mlx_ptr;
-
-	mlx_ptr = game->data.mlx;
-	free_textures(game);
-	if (game->data.win != NULL)
-		mlx_destroy_window(mlx_ptr, game->data.win);
-	if (game->data.img != NULL)
-		mlx_destroy_image(mlx_ptr, game->data.img);
-	if (mlx_ptr != NULL)
-	{
-		mlx_destroy_display(mlx_ptr);
-		free(mlx_ptr);
-	}
-	if (game->map.layout != NULL)
-		free_map(&game->map);
-	if (game->data.win)
-		mlx_destroy_window(game->data.mlx, game->data.win);
-	if (game->data.img)
-		mlx_destroy_image(game->data.mlx, game->data.img);
-	if (game->data.mlx)
-	{
-		mlx_destroy_display(game->data.mlx);
-		free(game->data.mlx);
-	}
-}
-
 int	main(int ac, char **av)
 {
 	t_game	game;
@@ -102,10 +74,9 @@ int	main(int ac, char **av)
 	load_map(av[1], &game);
 	if (!validate_input(&game.map, av))
 	{
-		cleanup_game(&game);
+		close_window(&game);
 		return (1);
 	}
 	game_init(&game);
-	cleanup_game(&game);
 	return (0);
 }

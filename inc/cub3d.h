@@ -6,7 +6,7 @@
 /*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:21:36 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/02 21:18:03 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/03 09:58:52 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,14 +167,15 @@ int		render_frame(t_game *game);
 void	render_player(t_data *data, t_game *game);
 void	clear_screen(t_data *data);
 void	free_texture(t_game *game);
-void draw_scene(t_game *game, int x, t_ray *ray);
-void initialize_dda(t_game *game, t_ray *ray);
+void	draw_scene(t_game *game, int x, t_ray *ray);
+void	initialize_dda(t_game *game, t_ray *ray);
 void	calculate_ray_direction(t_game *game, int x, t_ray *ray);
 double	calculate_perpendicular_distance(t_game *game, t_ray *ray);
-int perform_dda(t_game *game, t_ray *ray);
-void draw_vertical_line(t_game *game, int x, t_ray *ray, void *texture);
-void draw_floor_and_ceiling(t_game *game, int x, t_ray *ray);
-
-
+int		perform_dda(t_game *game, t_ray *ray);
+void	draw_vertical_line(t_game *game, int x, t_ray *ray, void *texture);
+void	draw_floor_and_ceiling(t_game *game, int x, t_ray *ray);
+void	destroy_image(void *mlx, void **img);
+void	free_map(t_map *map);
+int		close_window(t_game *game);
 
 #endif
