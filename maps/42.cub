@@ -1,5 +1,5 @@
-F 0,0,0
-C 255,0,0
+F 255,0,0
+C 0,0,0
 
 NO ./textures/1.xpm
 SO ./textures/2.xpm

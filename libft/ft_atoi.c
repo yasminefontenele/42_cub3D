@@ -1,47 +1,57 @@
 /* ************************************************************************** */
-/*                                                                            */
+/*	                                                                          */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yasmine <yasmine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 12:12:52 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/01 12:10:12 by yasmine          ###   ########.fr       */
+/*   Updated: 2024/11/03 13:03:36 by emencova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "../inc/cub3d.h"
 
-int	ft_atoi(const char *nptr)
+int	process_sign_and_whitespace(const char **nptr)
 {
 	size_t	i;
-	int		res;
+	int		sign;
 
 	i = 0;
-	res = 0;
-	while ((nptr[i] <= 13 && nptr[i] >= 9)
-		|| (nptr[i] == 32))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	sign = 1;
+	while ((**nptr <= 13 && **nptr >= 9) || (**nptr == 32))
+		(*nptr)++;
+	if (**nptr == '+' || **nptr == '-')
 	{
-		if (nptr[i] == '-')
+		if (**nptr == '-')
 		{
-			printf("Error:\n"COLOR_RANGE"\n");
-			exit (1);
+			printf("Error:\n" COLOR_RANGE "\n");
+			exit(1);
 		}
-		i++;
+		(*nptr)++;
 	}
-	while ((nptr[i] >= '0' && nptr[i] <= '9') || nptr[i] == ',')
-	{
-		if (nptr[i] == ',')
-			i++;
-		else
-		{
-			res = res * 10 + (nptr[i] - '0');
-			i++;
-		}
-	}
-	return (res);
+	return (sign);
 }
 
+int	ft_atoi(const char *nptr)
+{
+	int			res;
+	const char	*original_nptr;
+	int			sign;	
+
+	sign = process_sign_and_whitespace(&nptr);
+	res = 0;
+	original_nptr = nptr;
+	while ((*nptr >= '0' && *nptr <= '9') || *nptr == ',')
+	{
+		if (*nptr == ',')
+			nptr++;
+		else
+		{
+			res = res * 10 + (*nptr - '0');
+			nptr++;
+		}
+	}
+	return (res * sign);
+}
