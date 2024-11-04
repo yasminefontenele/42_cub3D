@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 16:00:16 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/02 19:19:07 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:38:06 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	parse_player(t_map *map, t_game *game)
 	y = 0;
 	while (y < map->height)
 	{
+		printf("insdie parse player loop \n");
 		x = 0;
 		while (x < map->width)
 		{
@@ -27,6 +28,7 @@ void	parse_player(t_map *map, t_game *game)
 				map->layout[y][x] == 'E' || map->layout[y][x] == 'W')
 			{
 				init_player(game, x, y, map->layout[y][x]);
+				printf("insdie parse play after init play \n");
 				return ;
 			}
 			x++;

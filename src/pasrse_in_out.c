@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pasrse_in_out.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 10:24:30 by yfontene          #+#    #+#             */
-/*   Updated: 2024/11/02 16:50:32 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/04 13:00:50 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char	**read_file_cub(const char *filename)
 	return (file);
 }
 
+
 void	process_file_lines(char **file_lines, t_game *game)
 {
 	int	i;
@@ -85,7 +86,7 @@ void	process_file_lines(char **file_lines, t_game *game)
 	}
 }
 
-void	load_map(const char *filename, t_game *game)
+void	load_map(const char *filename, t_game *game, char **av)
 {
 	char	**file_lines;
 
@@ -101,6 +102,8 @@ void	load_map(const char *filename, t_game *game)
 		exit(1);
 	}
 	parse_map(file_lines, &game->map);
+	if (!validate_input(&game->map, av))
+		close_window(game);
 	parse_player(&game->map, game);
 	process_file_lines(file_lines, game);
 	load_textures(game);

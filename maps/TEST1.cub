@@ -1,7 +1,7 @@
 F 20,255,20
 C 205,133,63
 
-NO ./textures/bluestone.xpm
+NO ./textures/mx.xpm
 SO ./textures/bookshelf.xpm
 WE ./textures/bookshelf.xpm
 EA ./textures/bookshelf.xpm

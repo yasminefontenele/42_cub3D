@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:21:36 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/03 13:07:41 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:11:32 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@
 
 # define MOVE_SPEED		0.1
 # define ROTATE_SPEED	0.1
-# define COLLISION		0.4
+# define COLLISION		0.1
 
 typedef struct s_ray
 {
@@ -140,7 +140,7 @@ typedef struct s_game
 	t_data		data;
 }			t_game;
 
-void	load_map(const char *filename, t_game *game);
+void	load_map(const char *filename, t_game *game,char **av);
 void	parse_map(char **file_lines, t_map *map);
 void	parse_player(t_map *map, t_game *game);
 char	**read_file_cub(const char *filename);
@@ -192,5 +192,5 @@ void	allocate_empty_row(char *map_row, int width);
 void	allocate_map_layout(t_map *map);
 void	free_textures(t_game *game);
 void	free_img(t_game *game);
-
+int		validate_input(t_map *map, char **av);
 #endif

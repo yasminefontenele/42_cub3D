@@ -6,7 +6,7 @@
 /*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:48:37 by yfontene          #+#    #+#             */
-/*   Updated: 2024/11/03 18:56:37 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/04 13:00:42 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int validate_cell(char **map_tab, int row, int col, int *player_count, int heigh
     return (1);
 }
 
+
 int validate_map_content(char **map_tab, int height)
 {
     int player_count;
@@ -83,8 +84,9 @@ int validate_map_content(char **map_tab, int height)
     }
     if (player_count != 1)
         return (0);
-    return (1);
+    return(1);
 }
+
 
 int validate_map(char **map_tab, int height)
 {
@@ -92,3 +94,4 @@ int validate_map(char **map_tab, int height)
         return (0);
     return (1);
 }
+

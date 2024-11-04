@@ -12,6 +12,7 @@
 
 #include "./inc/cub3d.h"
 
+
 int	validate_input(t_map *map, char **av)
 {
 	if (validate_map(map->layout, map->height) == 0)
@@ -55,6 +56,8 @@ void	display_controls(void)
 	printf(MAGENTA "\t>" RESET ": rotate right\n");
 }
 
+
+
 int	main(int ac, char **av)
 {
 	t_game	game;
@@ -64,9 +67,9 @@ int	main(int ac, char **av)
 		printf("Error:\n"INVALID_AC"\n");
 		exit (1);
 	}
-	display_controls();
+	//display_controls();
 	ft_memset(&game, 0, sizeof(t_game));
-	load_map(av[1], &game);
+	load_map(av[1], &game, av);
 	if (!validate_input(&game.map, av))
 	{
 		close_window(&game);
