@@ -1,5 +1,5 @@
-F 128,128,128
-C 176,224,230
+F 0,0,0
+C 255,255,255
 
 NO ./textures/bookshelf.xpm
 SO ./textures/bookshelf_01.xpm
