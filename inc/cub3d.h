@@ -6,7 +6,7 @@
 /*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:21:36 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/04 12:11:32 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/04 13:09:49 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "../minilibx-linux/mlx_int.h"
 # include <X11/keysym.h>
 # include <X11/X.h>
+# include <stdbool.h>
 
 # define MEMORY_ERROR "Memory allocation failed"
 # define INVALID_AC "Wrong number of arguments."

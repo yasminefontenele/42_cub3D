@@ -6,7 +6,7 @@
 /*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 10:24:30 by yfontene          #+#    #+#             */
-/*   Updated: 2024/11/04 13:00:50 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/04 13:12:19 by eliskam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,28 +62,59 @@ char	**read_file_cub(const char *filename)
 	return (file);
 }
 
-
-void	process_file_lines(char **file_lines, t_game *game)
+void process_file_lines(char **file_lines, t_game *game)
 {
-	int	i;
+    int i;
+    bool floor_color_found = false;
+    bool ceiling_color_found = false;
+    bool north_texture_found = false;
+    bool south_texture_found = false;
+    bool west_texture_found = false;
+    bool east_texture_found = false;
 
-	i = 0;
-	while (file_lines[i])
-	{
-		if (ft_strncmp(file_lines[i], "F", 1) == 0)
-			game->floor_color = parse_color(file_lines[i], &game->color);
-		else if (ft_strncmp(file_lines[i], "C", 1) == 0)
-			game->ceiling_color = parse_color(file_lines[i], &game->color);
-		else if (ft_strncmp(file_lines[i], "NO", 2) == 0)
-			game->texture.north = ft_strtrim(file_lines[i] + 2, " ");
-		else if (ft_strncmp(file_lines[i], "SO", 2) == 0)
-			game->texture.south = ft_strtrim(file_lines[i] + 2, " ");
-		else if (ft_strncmp(file_lines[i], "WE", 2) == 0)
-			game->texture.west = ft_strtrim(file_lines[i] + 2, " ");
-		else if (ft_strncmp(file_lines[i], "EA", 2) == 0)
-			game->texture.east = ft_strtrim(file_lines[i] + 2, " ");
-		i++;
-	}
+    i = 0;
+    while (file_lines[i])
+    {
+        if (ft_strncmp(file_lines[i], "F", 1) == 0)
+        {
+            game->floor_color = parse_color(file_lines[i], &game->color);
+            floor_color_found = true;
+        }
+        else if (ft_strncmp(file_lines[i], "C", 1) == 0)
+        {
+            game->ceiling_color = parse_color(file_lines[i], &game->color);
+            ceiling_color_found = true;
+        }
+        else if (ft_strncmp(file_lines[i], "NO", 2) == 0)
+        {
+            game->texture.north = ft_strtrim(file_lines[i] + 2, " ");
+            north_texture_found = true;
+        }
+        else if (ft_strncmp(file_lines[i], "SO", 2) == 0)
+        {
+            game->texture.south = ft_strtrim(file_lines[i] + 2, " ");
+            south_texture_found = true;
+        }
+        else if (ft_strncmp(file_lines[i], "WE", 2) == 0)
+        {
+            game->texture.west = ft_strtrim(file_lines[i] + 2, " ");
+            west_texture_found = true;
+        }
+        else if (ft_strncmp(file_lines[i], "EA", 2) == 0)
+        {
+            game->texture.east = ft_strtrim(file_lines[i] + 2, " ");
+            east_texture_found = true;
+        }
+        i++;
+    }
+    if (!floor_color_found || !ceiling_color_found || 
+        !north_texture_found || !south_texture_found || 
+        !west_texture_found || !east_texture_found)
+    {
+        printf("Error:\n Missing required configuration lines.\n");
+		free_file_lines(file_lines);
+		close_window(game);
+    }
 }
 
 void	load_map(const char *filename, t_game *game, char **av)
