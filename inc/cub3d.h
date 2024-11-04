@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
+/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:21:36 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/04 13:09:49 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/04 16:11:07 by emencova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,4 +194,7 @@ void	allocate_map_layout(t_map *map);
 void	free_textures(t_game *game);
 void	free_img(t_game *game);
 int		validate_input(t_map *map, char **av);
+void	init_data(t_data *data);
+
+
 #endif

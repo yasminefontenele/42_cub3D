@@ -6,12 +6,29 @@
 /*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:42:39 by yfontene          #+#    #+#             */
-/*   Updated: 2024/11/02 19:27:28 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/04 14:29:44 by emencova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
+int	can_move_to(t_game *game, double newx, double newy)
+{
+	int	xmin;
+	int	xmax;
+	int	ymin;
+	int	ymax;
+
+	xmin = (int)(newx);
+	xmax = (int)(newx);
+	ymin = (int)(newy);
+	ymax = (int)(newy);
+	return (game->map.layout[ymin][xmin] != '1' &&
+			game->map.layout[ymax][xmin] != '1' &&
+			game->map.layout[ymin][xmax] != '1' &&
+			game->map.layout[ymax][xmax] != '1');
+}
+/*
 int	can_move_to(t_game *game, double newx, double newy)
 {
 	int	xmin;
@@ -28,6 +45,7 @@ int	can_move_to(t_game *game, double newx, double newy)
 			game->map.layout[ymin][xmax] != '1' &&
 			game->map.layout[ymax][xmax] != '1');
 }
+*/
 
 void	move_y(t_game *game, char direction)
 {

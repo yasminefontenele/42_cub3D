@@ -69,7 +69,7 @@ int	main(int ac, char **av)
 	}
 	display_controls();
 	ft_memset(&game, 0, sizeof(t_game));
-	load_map(av[1], &game, av);
+	load_map(av[1],&game, av);
 	if (!validate_input(&game.map, av))
 	{
 		close_window(&game);

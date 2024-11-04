@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parser_checks.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eliskam <eliskam@student.42.fr>            +#+  +:+       +#+        */
+/*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:48:37 by yfontene          #+#    #+#             */
-/*   Updated: 2024/11/04 13:00:42 by eliskam          ###   ########.fr       */
+/*   Updated: 2024/11/04 15:34:57 by emencova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 #include "../libft/libft.h"
-
+ 
 int check_surrounding_cells(char **map_tab, int row, int col, int height, int width)
 {
     char cell;
@@ -94,4 +94,3 @@ int validate_map(char **map_tab, int height)
         return (0);
     return (1);
 }
-

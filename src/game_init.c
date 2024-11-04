@@ -6,7 +6,7 @@
 /*   By: emencova <emencova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 15:10:04 by emencova          #+#    #+#             */
-/*   Updated: 2024/11/02 17:07:28 by emencova         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:15:09 by emencova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 void	game_init(t_game *game)
 {
-	game->data.win = mlx_new_window(game->data.mlx, \
+	game->data.win = mlx_new_window(game->data.mlx, 
 			WIDTH, HEIGHT, "Cub3D");
 	if (!game->data.win)
-	{
-		mlx_destroy_display(game->data.mlx);
-		free(game->data.mlx);
-		exit(1);
-	}
+		close_window(game);
 	game->data.img = mlx_new_image(game->data.mlx, WIDTH, HEIGHT);
 	if (!game->data.img)
 	{
