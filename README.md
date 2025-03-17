@@ -82,7 +82,7 @@ To draw a line from point \((1, 1)\) to \((4, 3)\), the algorithm selects the pi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cub3d.git
+   git clone https://github.com/yasminefontenele/42_cub3D.git
    cd cub3d
 2. Compile the project using the provided Makefile:
    ```bash
