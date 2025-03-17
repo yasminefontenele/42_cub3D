@@ -14,8 +14,6 @@ Welcome to **cub3D**, a project inspired by the legendary game **Wolfenstein 3D*
 5. [Usage](#usage)
 6. [Map Configuration](#map-configuration)
 7. [Controls](#controls)
-8. [Contributing](#contributing)
-9. [License](#license)
 
 ---
 
